@@ -13,18 +13,21 @@ function NavBar() {
         </li>
         <li role="separator" className="flex-1" />
         {user ? (
-          <>
-            <li>
-              {user.name}
-            </li>
-            <li>
-              <button onClick={signOut}>Sign Out</button>
-            </li>
-          </>
+            <>
+              <li>
+                <Link href="/cart">Cart</Link>
+              </li>
+              <li>
+                {user.name}
+              </li>
+              <li>
+                <button onClick={signOut}>Sign Out</button>
+              </li>
+            </>
         ) : (
-          <li>
-            <Link href="/sign-in">Sign In</Link>
-          </li>
+            <li>
+              <Link href="/sign-in">Sign In</Link>
+            </li>
         )}
       </ul>
     </nav>

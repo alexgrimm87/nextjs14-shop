@@ -40,10 +40,18 @@ function SignInPage() {
         </Field>
         {signInError && (<p className="text-red-700">Invalid credentials</p>)}
         {signInLoading ? (
-          <p>Loading...</p>
+            <p>Loading...</p>
         ) : (
-          <Button type="submit">Sign In</Button>
+            <Button type="submit">Sign In</Button>
         )}
+        <div>
+          <p><strong>Try Demo Customer Access</strong></p>
+          <p><span>Email: </span>alice@example.com</p>
+          <p><span>Password: </span>Alice123</p>
+          <br/>
+          <p><span>Email: </span>bob@example.com</p>
+          <p><span>Password: </span>Bob123</p>
+        </div>
       </form>
     </Page>
   );
