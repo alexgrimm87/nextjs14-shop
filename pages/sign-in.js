@@ -1,3 +1,4 @@
+import {useRouter} from 'next/router';
 import {useState} from 'react';
 import {fetchJson} from "../lib/api";
 import Page from '../components/Page';
@@ -6,6 +7,7 @@ import Input from "../components/Input";
 import Button from "../components/Button";
 
 function SignInPage() {
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [status, setStatus] = useState({ loading: false, error: false });
@@ -21,6 +23,7 @@ function SignInPage() {
         body: JSON.stringify({ email, password }),
       });
       setStatus({ loading: false, error: false });
+      router.push('/');
     } catch (err) {
       setStatus({ loading: false, error: true });
     }
